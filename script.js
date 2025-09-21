@@ -1,15 +1,15 @@
-// Function to get the course ID from the URL
+// وظيفة للحصول على معرف المقرر الدراسي من عنوان URL
 function getCourseIdFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('id');
 }
 
-// Function to find course data by ID
+// وظيفة للعثور على بيانات المقرر الدراسي عن طريق المعرف
 function findCourseById(id, courses) {
     return courses.find(course => course.id === id);
 }
 
-// Function to parse FAQ string
+// وظيفة لتحليل سلسلة الأسئلة الشائعة
 function parseFaqString(faqString) {
     const obj = {};
     if (!faqString) return obj;
@@ -20,7 +20,7 @@ function parseFaqString(faqString) {
     return obj;
 }
 
-// Main function to fetch courses from server
+// الوظيفة الرئيسية لجلب المقررات الدراسية من الخادم
 async function getCoursesFromServer() {
     try {
         const response = await fetch('https://script.google.com/macros/s/AKfycbwY-4cac3jIZ-OHP1l3p4Fb4oiEgonQvxKu5h7swhpov8iMZXmQ7VpDTX_GG5zq9kIn2g/exec');
@@ -29,7 +29,7 @@ async function getCoursesFromServer() {
         }
         const data = await response.json();
 
-        // Convert data to the required structure
+        // تحويل البيانات إلى الهيكل المطلوب
         return data.map(item => ({
             id: item.id,
             title: item.title,
@@ -52,28 +52,120 @@ async function getCoursesFromServer() {
     }
 }
 
-// Function to populate the page with course data
+// وظيفة لتعبئة الصفحة ببيانات المقرر الدراسي
 function populatePage(course) {
-    // Update the page title
+    // تحديث عنوان الصفحة
     const pageTitleElement = document.getElementById('page-title');
     if (pageTitleElement) pageTitleElement.textContent = course.title.replace(/<[^>]*>?/gm, '');
 
-    // Update Hero section
+    // تحديث قسم البطل
     const heroTitleElement = document.getElementById('hero-title');
     if (heroTitleElement) heroTitleElement.innerHTML = course.title;
 
     const heroDescriptionElement = document.getElementById('hero-description');
     if (heroDescriptionElement) heroDescriptionElement.textContent = course.description;
 
-    // ... (Continue to check for element existence before updating)
+    // تحديث سرادق
+    const marqueeTextElement = document.getElementById('marquee-text');
+    if (marqueeTextElement) marqueeTextElement.textContent = course.marquee;
 
-    // Re-initialize dynamic scripts
+    // تحديث الدورة حول
+    const courseAboutElement = document.getElementById('course-about');
+    if (courseAboutElement) courseAboutElement.textContent = course.description;
+
+    // تحديث قائمة الأهداف
+    const objectivesList = document.getElementById('objectives-list');
+    if (objectivesList) {
+        objectivesList.innerHTML = ''; // مسح المحتوى السابق
+        course.objectives.forEach(obj => {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="fas fa-bullseye"></i> ${obj}`;
+            objectivesList.appendChild(li);
+        });
+    }
+
+    // تحديث قائمة المحاور
+    const axesList = document.getElementById('axes-list');
+    if (axesList) {
+        axesList.innerHTML = ''; // مسح المحتوى السابق
+        course.axes.forEach(axis => {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="fas fa-calendar-alt"></i> ${axis}`;
+            axesList.appendChild(li);
+        });
+    }
+  
+    // تحديث نص الإنجازات
+    const achievementsTextElement = document.getElementById('achievements-text');
+    if (achievementsTextElement) achievementsTextElement.innerHTML = course.achievements;
+
+    // تحديث حقل النموذج المخفي
+    const courseNameInput = document.getElementById('course-name-input');
+    if (courseNameInput) {
+        courseNameInput.value = course.title.replace(/<[^>]*>?/gm, '').trim();
+    }
+
+    // ملء شريط تمرير المدربين
+    const instructorsSlider = document.getElementById('instructors-slider');
+    if (instructorsSlider) {
+        const instructorDotsContainer = instructorsSlider.querySelector('.instructor-dots');
+        instructorsSlider.querySelectorAll('.instructor-slide').forEach(slide => slide.remove());
+        
+        course.instructors.forEach((instructor, index) => {
+            const slideDiv = document.createElement('div');
+            slideDiv.classList.add('instructor-slide');
+            if (index === 0) slideDiv.classList.add('active');
+            slideDiv.innerHTML = `
+                <div class="instructor-card">
+                    <img src="https://i.ibb.co/L519VjL/certificate.png" alt="صورة المدرب">
+                    <h4>${instructor.name}</h4>
+                    <p>${instructor.expertise}</p>
+                </div>
+            `;
+            instructorsSlider.insertBefore(slideDiv, instructorDotsContainer);
+        });
+    }
+
+    // ملء الشهادات المتزلج
+    const testimonialsSlider = document.getElementById('testimonials-slider');
+    if (testimonialsSlider) {
+        const testimonialDotsContainer = testimonialsSlider.querySelector('.testimonial-dots');
+        testimonialsSlider.querySelectorAll('.testimonial-slide').forEach(slide => slide.remove());
+
+        course.testimonials.forEach((testimonial, index) => {
+            const slideDiv = document.createElement('div');
+            slideDiv.classList.add('testimonial-slide');
+            if (index === 0) slideDiv.classList.add('active');
+            slideDiv.innerHTML = `
+                <p class="testimonial-text">"${testimonial.text}"</p>
+                <p>– ${testimonial.name}</p>
+            `;
+            testimonialsSlider.insertBefore(slideDiv, testimonialDotsContainer);
+        });
+    }
+
+    // تعبئة قسم الأسئلة الشائعة
+    const faqContainer = document.getElementById('faq-container');
+    if (faqContainer) {
+        faqContainer.innerHTML = ''; // مسح المحتوى السابق
+        course.faq.forEach(item => {
+            const faqItem = document.createElement('div');
+            faqItem.classList.add('faq-item');
+            faqItem.innerHTML = `
+                <div class="faq-question">${item.question} <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">${item.answer}</div>
+            `;
+            faqContainer.appendChild(faqItem);
+        });
+    }
+
+    // إعادة تهيئة البرامج النصية الديناميكية
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
     initSliders();
     initFaqToggle();
 }
 
-// Main function to run on page load
+// الوظيفة الرئيسية للتشغيل عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', async () => {
     const courses = await getCoursesFromServer();
     const courseId = getCourseIdFromUrl();
@@ -88,7 +180,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
     
-    // Form submission and sticky button logic
+    // إرسال النموذج ومنطق الزر اللاصق
     const stickyRegisterBtn = document.querySelector('.sticky-register-btn');
     const stickyWhatsappBtn = document.querySelector('.sticky-whatsapp-btn');
     const footer = document.querySelector('footer');
@@ -160,6 +252,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 أرجو إتمام التسجيل في الدورة.`;
     }
 
-    // Sliders and FAQ functions
-    // ... (initSliders and initFaqToggle functions remain the same but now will be called by populatePage)
+    // أشرطة التمرير ووظائف الأسئلة الشائعة
+    // ملاحظة: يجب تعريف وظائف initSliders و initFaqToggle في مكان آخر في ملفك
+    // ...
 });
