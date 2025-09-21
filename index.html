@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17515401485"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17515401485');
+</script>
+
+<script>
+  gtag('event', 'purchase', {
+    // <event_parameters>
+  });
+</script>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الرئيسية - مؤسسة كن أنت</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+  
+  <style>
+    /* -------------------- إعدادات CSS العامة -------------------- */
+    
+    /* تعريف الألوان الأساسية في متغيرات لتسهيل التعديل */
+    :root {
+      --primary-color: #0d3b14; /* اللون الأساسي: أخضر داكن */
+      --secondary-color: #e5a72d; /* اللون الثانوي: ذهبي/أصفر */
+      --accent-color: #f7f3e9; /* لون الخلفية: بيج فاتح */
+      --text-color: #f4f4f4; /* لون النصوص: أبيض */
+    }
+    
+    /* تنسيق الجسم الأساسي للصفحة */
+    body {
+      margin: 0;
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      line-height: 1.7;
+      overflow-x: hidden; /* إخفاء أي محتوى يخرج عن عرض الصفحة */
+    }
+    
+    /* -------------------- تنسيق الأقسام -------------------- */
+    
+    /* تنسيق الهيدر (العنوان وقائمة التنقل) */
+    header {
+      background: var(--primary-color);
+      color: var(--text-color);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 { margin: 0; font-size: 24px; font-weight: bold; }
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover { color: var(--secondary-color); }
+    
+    /* تنسيق قسم "البطل" (Hero Section) في أعلى الصفحة) */
+    .hero {
+      background: url("https://www.raed.net/img?id=1422661") no-repeat center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6); /* طبقة شفافة فوق الصورة */
+    }
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      background: rgba(13, 59, 20, 0.7);
+      padding: 30px 40px;
+      border-radius: 15px;
+      color: var(--accent-color);
+      border: 2px solid var(--secondary-color);
+    }
+    .hero-text h2 { 
+      font-size: clamp(28px, 6vw, 38px);
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+    .hero-text p {
+      font-size: clamp(16px, 4vw, 20px);
+      margin: 0 0 25px 0;
+      font-weight: 400;
+    }
+    .hero-text a {
+      background: linear-gradient(45deg, #e5a72d, #f9c257);
+      color: var(--primary-color);
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+    .hero-text a:hover { transform: scale(1.05); }
+    
+    /* تنسيق شريط الأخبار المتحرك */
+    .marquee {
+      width: 100%;
+      background: gold;
+      color: var(--primary-color);
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      padding: 12px 0;
+      font-weight: bold;
+    }
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 70s linear infinite;
+    }
+    
+    
+    .ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.ticker {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%); /* يبدأ عند حافة اليسار */
+  }
+  100% {
+    transform: translateX(100%); /* يتحرك للخارج جهة اليمين */
+  }
+}
+
+      
+      
+    }
+    
+    /* تنسيق الأقسام الرئيسية (من نحن، مميزاتنا، الدورات، إلخ) */
+    .section {
+      width: 90%;
+      max-width: 1100px;
+      margin: 30px auto; 
+      /* حل جذري: تم تقليل المسافة العلوية والسفلية للقسم نفسه لتقليل الفراغ */
+      padding: 30px 20px; 
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+    }
+    
+    /* التحكم في ارتفاع قسم الدورات */
+    #coursess.section {
+      /* تم تغيير الارتفاع إلى 350 بكسل كما طلبت */
+      height: 350px; 
+      overflow: hidden; /* يمنع ظهور أي محتوى خارج الارتفاع المحدد */
+    }
+
+    /* تنسيق عناوين الأقسام (مثال: من نحن، مميزاتنا) */
+    .section h2 {
+      color: var(--primary-color);
+      /* حل جذري: تم تقليل المسافة أسفل العنوان لرفع السلايدر للأعلى */
+      margin-bottom: 10px; 
+      font-size: 28px;
+      text-align: center;
+      position: relative;
+    }
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary-color);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+    
+    /* تنسيق قسم المميزات */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      text-align: center;
+    }
+    .feature-card {
+      background: var(--accent-color);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .feature-card i {
+      font-size: 45px;
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
+    
+    /* -------------------- تنسيق Swiper (سلايدر الدورات) -------------------- */
+    
+    .swiper {
+      width: 100%;
+      /* حل جذري: تم تقليل المسافة أسفل السلايدر لتقليل الفراغ */
+      padding-bottom: 5px;
+      box-sizing: border-box;
+      /* تم إزالة الارتفاع التلقائي لضبط السلايدر داخل ارتفاع القسم المحدد */
+      height: 150px; 
+    }
+
+    /* التحكم في المسافة العمودية للشرائح داخل السلايدر */
+    .swiper-wrapper {
+      /* حل جذري: تم إزالة padding-top تمامًا لرفع الشرائح للأعلى مباشرة تحت العنوان */
+      padding-top: 0; 
+      align-items: center;
+    }
+
+    /* التحكم في الشرائح نفسها */
+    .swiper-slide {
+      text-align: center;
+      background: var(--accent-color);
+      /* حل جذري: تم تحديد ارتفاع ثابت لكل شريحة لضمان اتساق الحجم */
+      height: 70px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* تم تعديل الـ padding العلوي والسفلي للتحكم في ارتفاع الشريحة بشكل أفضل */
+      padding: 10px 25px; 
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .swiper-slide:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .swiper-slide .course-title {
+      font-weight: bold;
+      font-size: 18px;
+      color: var(--primary-color);
+    }
+    
+    /* تنسيق أزرار التنقل (الأسهم) */
+    .swiper-button-next, .swiper-button-prev {
+      color: var(--primary-color) !important;
+      background: var(--secondary-color);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+    .swiper-button-next::after, .swiper-button-prev::after {
+      font-size: 16px !important;
+      font-weight: bold;
+    }
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+      background: #f9c257;
+    }
+    
+    /* تنسيق نقاط الترقيم (Pagination) */
+    .swiper-pagination-bullet {
+      background: var(--primary-color);
+      width: 10px;
+      height: 10px;
+      opacity: 0.7;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      background: var(--secondary-color);
+    }
+    
+    /* -------------------- تنسيق سلايدر آراء الطلاب -------------------- */
+    
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto; 
+      overflow: hidden;
+      padding-bottom: 40px;
+    }
+    .testimonial {
+      display: none;
+      background: var(--accent-color);
+      padding: 30px;
+      border-radius: 12px;
+      font-style: italic;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .testimonial.active {
+      display: block; 
+    }
+    .testimonial::before {
+      content: '\201C';
+      font-size: 50px;
+      color: var(--secondary-color);
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+    .testimonial::after {
+      content: '\201D';
+      font-size: 50px;
+      color: var(--secondary-color);
+      position: absolute;
+      bottom: -15px;
+      left: 20px;
+    }
+    
+    /* تنسيق نقاط التنقل (dots) */
+    .slider-dots {
+      text-align: center;
+      margin-top: 20px; 
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      max-width: 220px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .dot {
+      display: inline-block;
+      height: 10px;
+      width: 10px;
+      background-color: #bbb;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .dot.active {
+      background-color: var(--primary-color);
+    }
+    
+    /* تنسيق قسم التواصل */
+    .contact { 
+      text-align: center; 
+    }
+    .contact a {
+      display: inline-flex;
+      align-items: center;
+      margin: 10px;
+      padding: 14px 25px;
+      background: var(--primary-color);
+      color: var(--text-color);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .contact a:hover {
+      background: var(--secondary-color);
+      color: var(--primary-color);
+    }
+    .contact a i {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+    
+    /* تنسيق الفوتر (نهاية الصفحة) */
+    footer {
+      background: var(--primary-color);
+      color: var(--text-color);
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+    
+    /* -------------------- تنسيقات الشاشات الصغيرة (الجوال) -------------------- */
+    
+    @media (max-width: 768px) {
+      header { flex-direction: column; text-align: center; padding: 10px 15px; }
+      header h1 { font-size: 20px; margin-bottom: 10px; }
+      nav { margin-top: 10px; }
+      nav a { margin: 5px 8px; font-size: 14px; }
+      .hero { padding: 80px 15px; }
+      .hero-text { padding: 20px 25px; }
+      .hero-text h2 { font-size: clamp(24px, 6vw, 28px); }
+      .hero-text p { font-size: clamp(14px, 4vw, 16px); }
+      .hero-text a { padding: 10px 20px; font-size: 15px; }
+      .marquee { padding: 8px 0; font-size: 14px; }
+      /* حل جذري: تم تقليل المسافات على الجوال أيضًا */
+      .section {
+        width: 95%;
+        padding: 20px 15px;
+        margin: 20px auto;
+      }
+      .section h2 { font-size: 24px; }
+      .features { grid-template-columns: 1fr; }
+      .feature-card { padding: 25px; }
+      .testimonial { padding: 25px; }
+      .testimonial::before, .testimonial::after { font-size: 40px; }
+      .contact a {
+        width: auto;
+        margin: 8px;
+        font-size: 15px;
+        padding: 10px 15px;
+      }
+      footer { padding: 15px; font-size: 12px; }
+    }
+    @media (max-width: 400px) {
+      .hero { padding: 60px 10px; }
+      .hero-text { padding: 15px 20px; }
+      nav a { font-size: 12px; margin: 4px; }
+      .section { padding: 15px 10px; }
+      .testimonial { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-seedling"></i> مؤسسة كن أنت</h1>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="#about">من نحن</a>
+      <a href="courses.html">الدورات</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
+  
+  <div class="hero" data-aos="fade-up">
+    <div class="hero-text">
+      <h2>مرحبًا بكم في مؤسسة كن أنت</h2>
+      <p>نُصنع جيلاً واعيًا، قادرًا على التغيير والبناء</p>
+      <a href="courses.html">📚 استعرض جميع الدورات</a>
+    </div>
+  </div>
+  
+  
+<div class="marquee">
+  <span>
+    📢 سجل الآن في الدورات التدريبية وابدأ رحلتك نحو التطوير الشخصي والمهني!  
+    ✨ مميزات مؤسسة كن أنت: مدربون خبراء – محتوى متجدد – تطبيق عملي – دعم مستمر – متابعة فردية – شهادات معتمدة – بيئة تعليمية محفزة.  
+    📘 أهم الدورات: حفظ القرآن الكريم بالسند المتصل – تثبيت القرآن الكريم – التجويد والقراءات – التفسير وعلوم القرآن – إدارة الأعمال – الأمن السيبراني – مهارات التواصل – صناعة العباقرة – تنمية المهارات – صيانة الحواسيب – التفكير الإبداعي – التسويق الرقمي – فنون الذاكرة الخارقة – الإسعافات الأولية.  
+    🎯 اغتنم الفرصة وكن جزءًا من رحلتنا نحو التميز!  
+  </span>
+</div>
+  
+  
+  
+  
+  <div class="section" id="about" data-aos="fade-right">
+    <h2>من نحن</h2>
+    <p style="text-align: center;">مؤسسة تدريبية رائدة تهدف إلى تقديم برامج نوعية في التعليم، التنمية البشرية، والعلوم الشرعية، لنساهم في بناء جيل مبدع وواعٍ.</p>
+  </div>
+  
+  <div class="section" data-aos="fade-left">
+    <h2>مميزاتنا</h2>
+    <div class="features">
+      <div class="feature-card">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>مدربون خبراء</h3>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-globe"></i>
+        <h3>برامج حضورية وأونلاين</h3>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-book-open"></i>
+        <h3>تنوع الدورات</h3>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-lightbulb"></i>
+        <h3>أساليب تدريب مبتكرة</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="coursess" data-aos="zoom-in">
+    <h2>أحدث الدورات</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><span class="course-title">📘 دورة تثبيت القرآن الكريم</span></div>
+        <div class="swiper-slide"><span class="course-title">📘 دورة التجويد والقراءات</span></div>
+        <div class="swiper-slide"><span class="course-title">📘 دورة التفسير وعلوم القرآن</span></div>
+        <div class="swiper-slide"><span class="course-title">📘 دورة إدارة الأعمال</span></div>
+        <div class="swiper-slide"><span class="course-title">📘 دورة الأمن السيبراني</span></div>
+        <div class="swiper-slide"><span class="course-title">📘 دورة مهارات التواصل</span></div>
+        <div class="swiper-slide"><span class="course-title">📘 دورة الإسعافات الأولية</span></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <p style="text-align:center; margin-top:20px;">
+      <a href="coursesss.html" style="background:var(--secondary-color); color:var(--primary-color); padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold;">عرض جميع الدورات</a>
+    </p>
+  </div>
+
+  <div class="section" data-aos="fade-up">
+    <h2>آراء طلابنا</h2>
+    <div class="slider-container">
+      <div class="testimonial active">"الدورة ساعدتني على التعبير عن أفكاري بثقة ووضوح." – ليان (اليمن)</div>
+      <div class="testimonial">"تعلمت الاستماع بشكل فعّال وفهم الآخرين بطريقة أعمق." – رامي (السعودية)</div>
+      <div class="testimonial">"التمارين العملية جعلتني أكثر قدرة على التواصل مع فريقي وزملائي." – سارة (مصر)</div>
+      <div class="testimonial">"الحمد لله، أصبحت أتعامل مع الصراعات بذكاء واحترافية." – زيد (الأردن)</div>
+      <div class="testimonial">"الدورة علمتني فنون الإقناع والتأثير الإيجابي على الآخرين." – هالة (العراق)</div>
+      <div class="testimonial">"تعلمت كيفية بناء علاقات متينة ومؤثرة في حياتي المهنية والشخصية." – عمر (المغرب)</div>
+      <div class="testimonial">"كانت التجربة رائعة وغيرت طريقة تفكيري في التعلم." – نجلاء (الجزائر)</div>
+      <div class="testimonial">"زاد تركيزي بشكل ملحوظ، وأصبحت أستثمر وقتي بشكل أفضل." – حسين (تونس)</div>
+      <div class="testimonial">"الدورة أهدتني أدوات عملية ساعدتني في تطوير نفسي." – فاطمة (سوريا)</div>
+      <div class="testimonial">"أصبحت أكثر قدرة على مواجهة ضغوط الحياة." – عادل (السودان)</div>
+      <div class="testimonial">"التدريب فتح لي آفاقًا جديدة في مجال عملي." – مها (فلسطين)</div>
+      <div class="testimonial">"تعلمت مهارات ساعدتني في دراستي الجامعية." – سامر (ليبيا)</div>
+      <div class="testimonial">"زاد طموحي بعد هذه الدورة، وأصبحت أرى مستقبلي بشكل أوضح." – ريم (الكويت)</div>
+      <div class="testimonial">"أكثر ما أعجبني هو الجانب العملي والتطبيق المباشر." – خالد (قطر)</div>
+      <div class="testimonial">"لم أتوقع أن أتعلم بهذه السرعة والسهولة." – دعاء (الإمارات)</div>
+      <div class="testimonial">"أصبحت أكثر انضباطًا وإيجابية في حياتي اليومية." – ياسر (البحرين)</div>
+      <div class="testimonial">"الدورة ساعدتني على تحسين تواصلي مع عائلتي وزملائي." – لينا (سلطنة عمان)</div>
+      <div class="testimonial">"شعرت بالفخر عندما كسرت حاجز النسيان وضعف الذاكرة." – مصطفى (لبنان)</div>
+      <div class="testimonial">"التدريب جعلني أؤمن أن التغيير ممكن في أي عمر." – سناء (موريتانيا)</div>
+      <div class="testimonial">"التجربة كانت مليئة بالتحديات والإنجازات." – إبراهيم (اليمن)</div>
+      <div class="testimonial">"شكرًا للقائمين على هذا البرنامج الرائع." – صفاء (السعودية)</div>
+      <div class="testimonial">"شخصيًا أصبحت أكثر ثقة في قدراتي." – ناصر (مصر)</div>
+      <div class="testimonial">"تعلمت أن النجاح يحتاج إلى صبر ومثابرة." – أماني (الأردن)</div>
+      <div class="testimonial">"التمارين العقلية غيرت نظرتي للحفظ والتذكر." – يوسف (العراق)</div>
+      <div class="testimonial">"أكثر شيء رائع هو روح الفريق والدعم المستمر." – آية (المغرب)</div>
+      <div class="testimonial">"شعرت أنني أصبحت شخصًا جديدًا بعد الدورة." – هيثم (الجزائر)</div>
+      <div class="testimonial">"تعلمت كيف أستغل وقتي بشكل صحيح." – سلوى (تونس)</div>
+      <div class="testimonial">"البرنامج منحني حافزًا للاستمرار نحو أهدافي." – محمود (سوريا)</div>
+      <div class="testimonial">"المدربون كانوا رائعين وملهمين." – جميلة (السودان)</div>
+      <div class="testimonial">"الدورة جعلتني أتحدى نفسي كل يوم." – بشير (فلسطين)</div>
+      <div class="testimonial">"أصبحت أكثر تنظيمًا في حياتي العملية." – هدى (ليبيا)</div>
+      <div class="testimonial">"لم أكن أتصور أنني قادر على الحفظ بهذه السرعة." – رائد (الكويت)</div>
+      <div class="testimonial">"تجربة غيرت حياتي إلى الأفضل." – بشرى (قطر)</div>
+      <div class="testimonial">"تعلمت أن الإرادة تصنع المعجزات." – مروان (الإمارات)</div>
+      <div class="testimonial">"أكثر شيء أحببته هو النتائج الملموسة." – سعاد (البحرين)</div>
+      <div class="testimonial">"أشعر أنني أقوى وأكثر ثقة من قبل." – فادي (سلطنة عمان)</div>
+      <div class="testimonial">"التجربة كانت مليئة بالإيجابية والتحفيز." – نور (لبنان)</div>
+      <div class="testimonial">"الدورة أضافت لي خبرات عملية في وقت قصير." – كريمة (موريتانيا)</div>
+      <div class="testimonial">"وجدت نفسي أتذكر التفاصيل بسرعة مدهشة." – زياد (اليمن)</div>
+      <div class="testimonial">"هذه التجربة تستحق كل دقيقة." – ندى (السعودية)</div>
+      <div class="testimonial">"أصبحت أنجز مهامي الدراسية بسرعة أكبر." – أحمد (مصر)</div>
+      <div class="testimonial">"زاد حماسي بعد أن رأيت التطور الكبير عندي." – غادة (الأردن)</div>
+      <div class="testimonial">"لمست فرقًا واضحًا في حياتي اليومية." – وسيم (العراق)</div>
+      <div class="testimonial">"أكثر شيء تعلمته هو الثقة بالنفس." – منى (المغرب)</div>
+      <div class="testimonial">"الدورة أعطتني دافعًا قويًا للنجاح." – طارق (الجزائر)</div>
+      <div class="testimonial">"أصبحت أتعامل مع التحديات بعقلية جديدة." – هناء (تونس)</div>
+      <div class="testimonial">"شعرت أنني تقدمت خطوات كبيرة في وقت قصير." – علي (سوريا)</div>
+      <div class="testimonial">"النتائج فاقت كل توقعاتي." – هالة (السودان)</div>
+      <div class="testimonial">"البرنامج مميز بكل المقاييس." – بلال (فلسطين)</div>
+      <div class="testimonial">"الدورة غيرت طريقة تفكيري في التعلم." – ريم (ليبيا)</div>
+      <div class="testimonial">"كانت البداية صعبة لكن النتيجة مذهلة." – أحمد (الكويت)</div>
+      <div class="testimonial">"تعلمت أن العقل لا يعرف المستحيل." – نجلاء (قطر)</div>
+      <div class="testimonial">"بفضل الله ثم الدورة أصبحت أفضل بكثير." – سيف (الإمارات)</div>
+      <div class="testimonial">"أصبحت أكثر صبرًا وإصرارًا بعد التدريب." – نورة (البحرين)</div>
+      <div class="testimonial">"المدربون والمتدربون كانوا مثل عائلة واحدة." – جلال (سلطنة عمان)</div>
+      <div class="testimonial">"استفدت من كل دقيقة في الدورة." – حنان (لبنان)</div>
+      <div class="testimonial">"شعرت أنني في بيئة محفزة جدًا." – رشا (موريتانيا)</div>
+      <div class="slider-dots"></div>
+    </div>
+  </div>
+  
+  <div class="section contact" id="contact" data-aos="flip-up">
+    <h2>تواصل معنا</h2>
+    <a href="https://wa.me/967771901320"><i class="fab fa-whatsapp"></i> واتساب</a>
+    <a href="mailto:be.you.t2025@gmail.com"><i class="fas fa-envelope"></i> البريد الإلكتروني</a>
+    <a href="https://t.me/MTYE1"><i class="fab fa-telegram"></i> تيليجرام</a>
+  </div>
+  
+  <footer>
+    <p>© 2025 مؤسسة كن أنت للتدريب والتأهيل - جميع الحقوق محفوظة</p>
+  </footer>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  
+  <script>
+    AOS.init({ 
+      duration: 1200, 
+      easing: "ease-in-out", 
+      once: true 
+    });
+    
+    let slideIndex = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    const dotsContainer = document.querySelector('.slider-dots');
+
+    dotsContainer.innerHTML = '';
+    const maxDots = 10;
+    for (let i = 0; i < Math.min(testimonials.length, maxDots); i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        dot.addEventListener('click', () => showSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+    
+    const dots = document.querySelectorAll('.dot');
+    
+    function showSlide(index) {
+      if (index >= testimonials.length) {
+        slideIndex = 0;
+      } else if (index < 0) {
+        slideIndex = testimonials.length - 1;
+      } else {
+        slideIndex = index;
+      }
+      
+      testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      testimonials[slideIndex].classList.add('active');
+      
+      dots[slideIndex % maxDots].classList.add('active');
+    }
+    
+    function nextSlide() {
+      showSlide(slideIndex + 1);
+    }
+    
+    setInterval(nextSlide, 4000);
+    
+    showSlide(0);
+
+    /* -------------------- إعدادات سلايدر الدورات (Swiper Course Slider) -------------------- */
+    var swiper = new Swiper(".mySwiper", {
+      /* حل جذري: تم تغيير القيمة إلى 'auto' لعرض شريحة واحدة فقط وتجاهل أجزاء الشرائح الأخرى على الجوال */
+      slidesPerView: 'auto',            
+      spaceBetween: 10,             
+      /* حل جذري: تم إزالة خاصية centeredSlides لمنع ظهور الشرائح جزئياً على الجوال */
+      // centeredSlides: true,          
+      loop: true,                    
+      autoplay: {
+        delay: 4000,                 
+        disableOnInteraction: false, 
+      },
+      pagination: {
+        el: ".swiper-pagination",    
+        clickable: true,             
+      },
+      navigation: {
+        nextEl: ".swiper-button-next", 
+        prevEl: ".swiper-button-prev", 
+      },
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">مؤسسة كن أنت</title>
+<meta name="description" content="سجل الآن في دورة الحفظ السريع للقرآن الكريم، تثبيت وحفظ بإتقان.">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17515401485"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17515401485');
+</script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --primary-color: #011f4b;
+    --secondary-color: #fec107;
+    --accent-color: #5ad5b0;
+    --text-color: #212529;
+    --bg-color: #f8f9fa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
+  body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+  .container { width: 90%; max-width: 900px; margin: 20px auto; padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); background-color: #fff; }
+
+  /* Header */
+  header {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  header h1 { font-size: 26px; font-weight: 700; color: var(--secondary-color); }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+  }
+  nav a:hover { color: var(--accent-color); }
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--accent-color);
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease-in-out;
+  }
+  nav a:hover::after { width: 100%; }
+  @media (max-width: 768px) {
+    header { flex-direction: column; text-align: center; padding: 15px 15px 10px; }
+    header h1 { margin-bottom: 10px; }
+    nav { margin-top: 10px; width: 100%; display: flex; justify-content: center; flex-wrap: wrap; }
+    nav a { margin: 5px 10px; font-size: 14px; }
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1549414002-3c2b189736c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 120px 20px 80px;
+    position: relative;
+    color: #fff;
+  }
+  .hero-text { background: rgba(1, 31, 75, 0.8); padding: 30px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); max-width: 800px; margin: 0 auto; }
+  .hero-text h2 { font-size: 32px; font-weight: 800; margin-bottom: 15px; color: var(--secondary-color); }
+  .hero-text p { font-size: 18px; line-height: 1.8; }
+
+  /* Marquee */
+  .marquee { background-color: var(--secondary-color); color: var(--primary-color); overflow: hidden; white-space: nowrap; padding: 10px 0; font-weight: bold; text-align: center; }
+  .marquee span { display: inline-block; animation: marquee 20s linear infinite; }
+  @keyframes marquee {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  /* Section Titles */
+  h2 { color: var(--primary-color); margin: 25px 0 15px; border-bottom: 3px solid var(--accent-color); padding-bottom: 8px; font-size: 24px; font-weight: 700; }
+  
+  /* Buttons and links */
+  .btn { display: inline-block; padding: 12px 25px; background: var(--primary-color); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); }
+  .btn:hover { background: #003366; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); }
+  .btn-register { background: var(--accent-color); color: var(--primary-color); font-weight: 800; }
+  .btn-register:hover { background: #44b694; }
+
+  /* Lists and Icons */
+  ul { list-style: none; padding-left: 0; }
+  li { margin-bottom: 12px; display: flex; align-items: flex-start; font-size: 16px; }
+  li i { color: var(--secondary-color); margin-left: 10px; font-size: 20px; transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; }
+  li:hover i { transform: rotate(10deg) scale(1.1); filter: brightness(1.2); }
+
+  /* Testimonials Slider */
+  .testimonials-slider, .instructors-slider {
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px;
+      padding: 20px;
+      background: #f0f8ff;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  }
+  .testimonial-slide, .instructor-slide {
+      display: none;
+      text-align: center;
+  }
+  .testimonial-slide.active, .instructor-slide.active {
+      display: block;
+  }
+  .instructor-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  .instructor-card h4 { margin-top: 15px; color: var(--primary-color); font-size: 18px; }
+  .instructor-card p { font-size: 14px; color: #6c757d; margin-top: 5px; }
+  .testimonial-text { font-style: italic; }
+  .slider-dots { text-align: center; margin-top: 15px; }
+  .dot { display: inline-block; width: 10px; height: 10px; margin: 0 5px; background: #ccc; border-radius: 50%; cursor: pointer; transition: background 0.3s; }
+  .dot.active { background: var(--primary-color); }
+  
+  /* FAQ */
+  .faq-item { margin-bottom: 15px; }
+  .faq-question {
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  .faq-question:hover {
+    background: #dee2e6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .faq-answer {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 5px;
+    display: none;
+    line-height: 1.5;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+  .faq-question i { transition: transform 0.3s; }
+  .faq-question.active i { transform: rotate(180deg); }
+
+  /* Certificate */
+  .certificate-section { text-align: center; padding: 20px 0; }
+  .certificate-section img { max-width: 100%; height: auto; border: 5px solid var(--primary-color); border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); transition: transform 0.3s; }
+  .certificate-section img:hover { transform: scale(1.03); }
+
+  /* Registration Form */
+  #registrationForm {
+    background: #e0f7f2;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+  }
+  #registrationForm h2 { margin-bottom: 20px; color: var(--primary-color); }
+  #registrationForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #555;
+  }
+  #registrationForm input, #registrationForm select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    font-family: 'Tajawal', sans-serif;
+    transition: border-color 0.3s;
+  }
+  #registrationForm input:focus, #registrationForm select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  #registrationForm button {
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor:pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  }
+  #registrationForm button:hover {
+    background: #003366;
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* Sticky Buttons */
+  .sticky-register-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease, visibility 0.3s ease, bottom 0.3s ease;
+  }
+  .sticky-register-btn.hidden {
+      opacity: 0;
+      visibility: hidden;
+      bottom: -100px;
+  }
+  .sticky-whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      background-color: #25d366;
+      color: #fff;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s, background-color 0.3s, opacity 0.3s ease, visibility 0.3s ease, bottom 0.3s ease;
+      opacity: 1;
+      visibility: visible;
+  }
+  .sticky-whatsapp-btn:hover {
+      transform: scale(1.1) translateY(-3px);
+      background-color: #128c7e;
+  }
+  .sticky-whatsapp-btn i { font-size: 28px; }
+  .sticky-whatsapp-btn.hidden {
+      opacity: 0;
+      visibility: hidden;
+      bottom: -100px;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 5px solid var(--secondary-color);
+  }
+  .footer-content { max-width: 900px; margin: 0 auto; }
+  .footer-links { margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+  .footer-links a { color: #fff; text-decoration: none; font-size: 14px; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--accent-color); }
+  .footer-social { margin-top: 20px; margin-bottom: 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+  .footer-social a { color: #fff; font-size: 24px; transition: transform 0.3s; }
+  .footer-social a:hover { color: var(--secondary-color); transform: scale(1.2); }
+  .footer-copy { margin-top: 15px; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>مؤسسة كن أنت</h1>
+  <nav>
+    <a href="https://beyou20.github.io/BeYou">الرئيسية</a>
+    <a href="#about-us-section">من نحن</a>
+    <a href="https://beyou20.github.io/BeYou/courses.html">الدورات</a>
+    <a href="contact.html">تواصل معنا</a>
+  </nav>
+</header>
+
+<div class="hero" data-aos="fade-up">
+  <div class="hero-text">
+    <h2 id="hero-title"></h2>
+    <p id="hero-description"></p>
+  </div>
+</div>
+
+<div class="marquee"><span id="marquee-text"></span></div>
+
+<div class="container" id="about-us-section" data-aos="fade-up">
+  <h2>من نحن</h2>
+</div>
+
+<div class="container" data-aos="fade-up">
+  <div class="video-section" style="margin-top:15px;">
+    <iframe width="100%" height="250" src="https://www.youtube.com/embed/EXAMPLE_VIDEO_ID" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+  </div>
+
+  <h2>📖 نبذة عن الدورة</h2>
+  <p id="course-about"></p>
+
+  <h2>🎯 أهداف الدورة</h2>
+  <ul id="objectives-list" data-aos="fade-right"></ul>
+
+  <h2>📌 المحاور الأساسية</h2>
+  <ul id="axes-list" data-aos="fade-right"></ul>
+  
+  <h2>🎓 فريق المدربين</h2>
+  <div id="instructors-slider" class="instructors-slider" data-aos="fade-up">
+    <div class="slider-dots instructor-dots"></div>
+  </div>
+
+  <h2>💬 آراء المتدربين</h2>
+  <div id="testimonials-slider" class="testimonials-slider" data-aos="fade-up">
+    <div class="slider-dots testimonial-dots"></div>
+  </div>
+
+  <h2>❓ الأسئلة الشائعة</h2>
+  <div id="faq-container" class="faq-container" data-aos="fade-up">
+    </div>
+
+  <h2>🏆 إنجازك بعد الدورة</h2>
+  <div class="certificate-section" data-aos="zoom-in">
+    <img src="https://i.ibb.co/L519VjL/certificate.png" alt="نموذج شهادة الدورة">
+    <p style="margin-top:10px; font-weight:bold; color:var(--primary-color);" id="achievements-text"></p>
+  </div>
+
+  <section>
+    <div id="registrationForm" data-aos="fade-up">
+          <h2>💡 لتبدأ رحلة النجاح سجل الآن </h2>
+      <form id="form" onsubmit="submitForm(event)">
+        <label for="name">الاسم الثلاثي</label>
+        <input type="text" name="name" id="name" placeholder="الاسم الثلاثي" required>
+
+        <label for="gender">الجنس</label>
+        <select name="gender" id="gender" required>
+          <option value="" disabled selected>الجنس</option>
+          <option value="ذكر">ذكر</option>
+          <option value="أنثى">أنثى</option>
+        </select>
+
+        <label for="age">العمر</label>
+        <input type="number" name="age" id="age" placeholder="العمر" required>
+
+        <label for="country">البلد</label>
+        <input type="text" name="country" id="country" placeholder="البلد" required>
+
+        <label for="phone">رقم الهاتف</label>
+        <input type="tel" name="phone" id="phone" placeholder="رقم الهاتف" required>
+
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" name="email" id="email" placeholder="البريد الإلكتروني" required>
+
+        <label for="telegram">رابط حسابك تيلجرام</label>
+        <input type="url" name="Telegram" id="telegram" placeholder="رابط حسابك تيلجرام" required>
+        
+        <input type="hidden" name="CourseName" id="course-name-input">
+        <button type="submit">إرسال البيانات</button>
+      </form>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="https://beyou20.github.io/BeYou">الرئيسية</a>
+      <a href="#about-us-section">من نحن</a>
+      <a href="https://beyou20.github.io/BeYou/courses.html">الدورات</a>
+      <a href="https://beyou20.github.io/BeYou/Contact-Usaa.html">تواصل معنا</a>
+    </div>
+    <div class="footer-social">
+        <a href="https://whatsapp.com/channel/0029VaCRNug3bbV13vVHyR0Z" target="_blank" aria-label="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/be.youar" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/BeYouTrainin" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://t.me/beyoue" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://www.linkedin.com/in/beyouar" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.tiktok.com/@beyoutq" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2025 مؤسسة كن أنت للتدريب والتأهيل. جميع الحقوق محفوظة.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="#registrationForm" class="btn btn-register sticky-register-btn">سجل الآن</a>
+<a href="https://whatsapp.com/channel/0029VaCRNug3bbV13vVHyR0Z" class="sticky-whatsapp-btn" target="_blank" aria-label="تواصل معنا عبر واتساب">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="scriptdr.js"></script>
+</body>
+</html>
+
+
