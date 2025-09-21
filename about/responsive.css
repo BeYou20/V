@@ -1,0 +1,85 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-section {
+    height: 400px;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  /* إخفاء أزرار التنقل في السلايدر على الشاشات الصغيرة */
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none; 
+  }
+
+  .swiper-pagination {
+    margin-top: 20px;
+  }
+
+  .testimonial-card h4 {
+    text-align: right;
+  }
+
+  /* تعديلات قوية للسلايدر على الجوال */
+  .swiper {
+    padding: 0; /* إزالة أي حشوة قد تسبب تداخلاً */
+  }
+
+  .swiper-slide {
+    width: 100% !important; /* فرض عرض 100% على الشريحة */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-content {
+    justify-content: center;
+  }
+  .logo {
+    font-size: 1.4rem;
+  }
+  .container {
+    padding: 15px;
+  }
+  .section {
+    padding: 25px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  .testimonial-card p {
+    font-size: 0.95rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+}

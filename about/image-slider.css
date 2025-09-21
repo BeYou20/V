@@ -1,0 +1,57 @@
+/* Custom styles for the new image slider */
+.image-swiper {
+  width: 100%;
+  height: 350px; /* الارتفاع الموحد كما طلبت */
+  margin-top: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  opacity: 0; /* سيخفي السلايدر في البداية */
+  transition: opacity 0.5s ease; /* سيجعل الظهور سلساً */
+}
+
+.image-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.image-swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Navigation and Pagination styles (you can copy from existing slider if you like) */
+.image-swiper .swiper-button-next,
+.image-swiper .swiper-button-prev {
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  transition: background-color 0.3s ease;
+}
+
+.image-swiper .swiper-button-next:hover,
+.image-swiper .swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.image-swiper .swiper-button-next::after,
+.image-swiper .swiper-button-prev::after {
+  font-size: 1.2rem;
+}
+
+.image-swiper .swiper-pagination-bullet {
+  background-color: #fff;
+  opacity: 0.8;
+}
+
+.image-swiper .swiper-pagination-bullet-active {
+  background-color: var(--secondary-color);
+  opacity: 1;
+}
